@@ -1,7 +1,7 @@
-vim.g.tomatotimer_time_work = 25
-vim.g.tomatotimer_time_break_short = 5
-vim.g.tomatotimer_time_break_long = 20
-vim.g.tomatotimer_timers_to_long_break = 4
+vim.g.tomatotimer_time_work = 1
+vim.g.tomatotimer_time_break_short = 1
+vim.g.tomatotimer_time_break_long = 2
+vim.g.tomatotimer_timers_to_long_break = 2
 
 local tomatotimer_state = 'stopped'
 local tomatotimer_work_started_at = 0
