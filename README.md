@@ -9,14 +9,19 @@ Implement a pomodoro timer and stopwatch into Neovim in Lua.
 ## To-Do:
 - [ ] Implement stopwatch
 - [x] Embed within [Lualine](https://github.com/vim-airline/vim-airline)
-- [ ] Fix problem --> unable to change pomodoro times
+- Document:
+	- Changing times in Lua
+	- Lualine integration
+- Fix:
+	- [ ] Unable to change pomodoro times from default
 
 ## Dependencies:
+- [Neovim](https://github.com/neovim/neovim/releases/tag/nightly) nightly
 - [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) for UI Components
 
 ## Installation
 
-### NVIM-Plug:
+### VIM-Plug:
 ```
 Plug "MunifTanjim/nui.nvim"
 Plug "psebaraj/tomatotimer.nvim"
@@ -40,11 +45,12 @@ use {
 let g:tomatotimer_time_work = 25
 let g:tomatotimer_time_break_short = 5
 let g:tomatotimer_time_break_long = 20
-let g:tomatotimer_timers_to_long_break = 4`
+let g:tomatotimer_timers_to_long_break = 4
 ```
+
 ## Usage
 | Command		| Description                                           |
 |---------------|-------------------------------------------------------|
-| :TomatoStart  | Starts the Pomodoro sessio                            |
-| :TomatoStop   | Stops the Pomodoro session.                           |
+| :TomatoStart  | Starts the Pomodoro session                           |
+| :TomatoStop   | Stops the Pomodoro session                            |
 | :TomatoStatus | Displays time remaining of current Pomodoro session   |

@@ -1,6 +1,6 @@
-vim.g.tomatotimer_time_work = 25
-vim.g.tomatotimer_time_break_short = 5
-vim.g.tomatotimer_time_break_long = 20
+vim.g.tomatotimer_time_work = 1
+vim.g.tomatotimer_time_break_short = 1
+vim.g.tomatotimer_time_break_long = 5
 vim.g.tomatotimer_timers_to_long_break = 4
 
 local tomatotimer_state = 'stopped'
@@ -110,7 +110,7 @@ display_tomatotimer_completed_menu = function()
             style = 'rounded',
             text = {
                 top_align = 'left',
-                top = '[Tomato Completed]'
+                top = '[Pomodoro' .. tomatotimer_timers_completed .. ' Completed]'
             },
             padding = { 1, 3 },
         },
