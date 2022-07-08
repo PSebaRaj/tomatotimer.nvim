@@ -1,5 +1,8 @@
 # tomatotimer.nvim
 Implement a pomodoro timer and stopwatch into Neovim in pure Lua.
+[![Latest Release](https://img.shields.io/github/release/psebaraj/tomatotimer.nvim.svg?style=for-the-badge)](https://github.com/psebaraj/tomatotimer.nvim/releases)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge)](/LICENSE)
+[![Build Status](https://img.shields.io/github/workflow/status/psebaraj/tomatotimer.nvim/CI?style=for-the-badge)](https://github.com/PSebaRaj/tomatotimer.nvim/actions/workflows/CI.yml)
 
 ## To-Do:
 - [ ] Implement stopwatch
