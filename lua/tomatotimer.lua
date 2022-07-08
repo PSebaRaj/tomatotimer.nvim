@@ -1,6 +1,6 @@
 vim.g.tomatotimer_time_work = 1
 vim.g.tomatotimer_time_break_short = 1
-vim.g.tomatotimer_time_break_long = 5
+vim.g.tomatotimer_time_break_long = 3
 vim.g.tomatotimer_timers_to_long_break = 4
 
 local tomatotimer_state = 'stopped'
@@ -10,7 +10,7 @@ local tomatotimer_timers_completed = 0
 local tomatotimer_uv_timer = nil
 
 local function tomatotimer_time_break()
-    if tomatotimer_timers_completed == 0 then
+    if tomatotimer_timers_completed == tomatotimer_timers_to_long_break then
         return vim.g.tomatotimer_time_break_long
     else
         return vim.g.tomatotimer_time_break_short
@@ -110,7 +110,7 @@ display_tomatotimer_completed_menu = function()
             style = 'rounded',
             text = {
                 top_align = 'left',
-                top = '[Pomodoro' .. tomatotimer_timers_completed .. ' Completed]'
+                top = '[Pomodoro ' .. tomatotimer_timers_completed .. ' Completed]'
             },
             padding = { 1, 3 },
         },
@@ -160,7 +160,7 @@ display_break_completed_menu = function()
             style = 'rounded',
             text = {
                 top_align = 'left',
-                top = '[Break Completed]'
+                top = '[Break ' .. tomatotimer_timers_completed  .. ' Completed]'
             },
             padding = { 1, 3 },
         },
