@@ -8,6 +8,7 @@ Implement a pomodoro timer and stopwatch into Neovim in pure Lua.
 
 ## To-Do:
 - [ ] Implement stopwatch
+- [ ] Embed within [Lualine](https://github.com/vim-airline/vim-airline)?
 
 ## Dependencies:
 - [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) for UI Components
