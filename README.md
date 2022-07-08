@@ -3,12 +3,13 @@
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=for-the-badge)](/LICENSE)
 [![Build Status](https://img.shields.io/github/workflow/status/psebaraj/tomatotimer.nvim/CI?style=for-the-badge)](https://github.com/PSebaRaj/tomatotimer.nvim/actions/workflows/CI.yml)
 
-Implement a pomodoro timer and stopwatch into Neovim in pure Lua.
+Implement a pomodoro timer and stopwatch into Neovim in Lua.
 
 
 ## To-Do:
 - [ ] Implement stopwatch
-- [ ] Embed within [Lualine](https://github.com/vim-airline/vim-airline)?
+- [x] Embed within [Lualine](https://github.com/vim-airline/vim-airline)
+- [ ] Fix problem --> unable to change pomodoro times
 
 ## Dependencies:
 - [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim) for UI Components
@@ -36,10 +37,10 @@ use {
 
 ### Vimscript
 ```
-let g:pomodoro_time_work = 25
-let g:pomodoro_time_break_short = 5
-let g:pomodoro_time_break_long = 20
-let g:pomodoro_timers_to_long_break = 4`
+let g:tomatotimer_time_work = 25
+let g:tomatotimer_time_break_short = 5
+let g:tomatotimer_time_break_long = 20
+let g:tomatotimer_timers_to_long_break = 4`
 ```
 ## Usage
 | Command		| Description                                           |
