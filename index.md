@@ -7,7 +7,7 @@ Implement a pomodoro timer (complete) and stopwatch (incomplete) into Neovim as 
 
 I've used the pomodoro method for years, especially while coding, and I wanted to embed it within Neovim to reduce application clutter.
 
-Although there are versions in Vimscript, I was inspired by [ThePrimeagen](https://github.com/ThePrimeagen) and [TJ Devries](https://github.com/tjdevries) to write my own plugin in Lua. The justification for this project was that I wanted to learn more Lua while converting my Neovim config from Vimscript to Lua, not to make a "blazingly-fast", hyper-performant refactor of a pomodoro timer.
+Although there are versions in Vimscript, I was inspired by [ThePrimeagen](https://github.com/ThePrimeagen) and [TJ DeVries](https://github.com/tjdevries) to write my own plugin in Lua. The justification for this project was that I wanted to learn more Lua while converting my Neovim config from Vimscript to Lua, not to make a "blazingly-fast", hyper-performant refactor of a pomodoro timer.
 
 ### Languages
 - Lua
