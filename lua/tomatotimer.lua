@@ -1,6 +1,6 @@
-vim.g.tomatotimer_time_work = 1
-vim.g.tomatotimer_time_break_short = 1
-vim.g.tomatotimer_time_break_long = 3
+vim.g.tomatotimer_time_work = 20
+vim.g.tomatotimer_time_break_short = 5
+vim.g.tomatotimer_time_break_long = 20
 vim.g.tomatotimer_timers_to_long_break = 4
 
 local tomatotimer_state = 'stopped'
@@ -11,8 +11,10 @@ local tomatotimer_uv_timer = nil
 
 local function tomatotimer_time_break()
     if tomatotimer_timers_completed == tomatotimer_timers_to_long_break then
+		print("Starting long break")
         return vim.g.tomatotimer_time_break_long
     else
+		print("Starting short break")
         return vim.g.tomatotimer_time_break_short
     end
 end
@@ -33,18 +35,20 @@ local function start_tomatotimer()
         tomatotimer_uv_timer:start(work_milliseconds, 0, vim.schedule_wrap(display_tomatotimer_completed_menu))
         tomatotimer_work_started_at = os.time()
         tomatotimer_state = 'started'
+		--print(tomatotimer_state)
     end
 end
 
 local display_break_completed_menu
 local function start_break()
-    if tomatotimer_state == 'started' then
+	-- print(tomatotimer_state)
+    --if tomatotimer_state == 'started' then
         tomatotimer_timers_completed = (tomatotimer_timers_completed + 1) % vim.g.tomatotimer_timers_to_long_break
-        local break_milliseconds = tomatotimer_time_break() * 60 * 1000
+        local break_milliseconds = tomatotimer_time_break() * 1000
         tomatotimer_uv_timer:start(break_milliseconds, 0, vim.schedule_wrap(display_break_completed_menu))
         tomatotimer_break_started_at = os.time()
         tomatotimer_state = 'break'
-    end
+    --end
 end
 
 local Tomato = {}
@@ -134,6 +138,7 @@ display_tomatotimer_completed_menu = function()
             if item.text == 'Quit' then
                 Tomato.stop()
             else
+				print(tomatotimer_state)
                 start_break()
             end
         end
@@ -188,7 +193,6 @@ display_break_completed_menu = function()
             end
         end
     }
-
     local menu = Menu(popup_options, menu_options)
     menu:mount()
     menu:on(event.BufLeave, function()
